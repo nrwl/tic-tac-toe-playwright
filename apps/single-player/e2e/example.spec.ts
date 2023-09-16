@@ -4,8 +4,8 @@ import {
   BoardIndex,
   SpaceContent,
   SpaceCoordinates,
+  Turn,
 } from 'tic-tac-toe-logic';
-import { Turn } from '../../../libs/tic-tac-toe-logic/src';
 
 test('starts with an empty board', async ({ page }) => {
   await page.goto('/');

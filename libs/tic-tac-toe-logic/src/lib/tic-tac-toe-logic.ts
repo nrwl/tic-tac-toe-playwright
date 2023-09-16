@@ -25,7 +25,7 @@ export interface SpaceCoordinates {
   column: BoardIndex;
 }
 
-export function getWinner(board: Board): 'x' | 'o' | 'tie' | false {
+export function getWinner(board: Board): 'x' | 'o' | false {
   for (const [x, y, z] of winningCombinations) {
     if (
       board[x.row][x.column] === board[y.row][y.column] &&
@@ -38,14 +38,7 @@ export function getWinner(board: Board): 'x' | 'o' | 'tie' | false {
       }
     }
   }
-  for (const row of board) {
-    for (const space of row) {
-      if (space === '') {
-        return false;
-      }
-    }
-  }
-  return 'tie';
+  return false;
 }
 
 export function createEmptyBoard(): Board {
