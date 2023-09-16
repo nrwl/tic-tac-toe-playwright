@@ -32,3 +32,17 @@
 .reset {
   margin-top: 40px;
 }
+
+#root {
+  display: grid;
+  font-family: sans-serif;
+  min-width: 300px;
+  max-width: 600px;
+  margin: 50px auto;
+  align-content: center;
+  justify-items: center;
+}
+
+#root > button {
+  margin-top: 20px;
+}

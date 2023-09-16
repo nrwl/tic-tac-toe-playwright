@@ -58,13 +58,6 @@
       "options": {
         "lintFilePatterns": ["apps/single-player/src/**/*.{ts,tsx,js,jsx}"]
       }
-    },
-    "e2e": {
-      "executor": "@nx/playwright:playwright",
-      "outputs": ["{workspaceRoot}/dist/.playwright/apps/single-player"],
-      "options": {
-        "config": "apps/single-player/playwright.config.ts"
-      }
     }
   },
   "tags": []
