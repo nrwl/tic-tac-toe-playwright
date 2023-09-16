@@ -1,4 +1,5 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
@@ -14,25 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "tic-tac-toe-logic": ["tic-tac-toe-logic/src/index.ts"]
-    },
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "types": ["vite/client", "vitest"]
-  },
-  "files": [],
-  "include": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
+      "tic-tac-toe-logic": ["libs/tic-tac-toe-logic/src/index.ts"]
     }
-  ],
-  "compileOnSave": false,
+  },
   "exclude": ["node_modules", "tmp"]
 }

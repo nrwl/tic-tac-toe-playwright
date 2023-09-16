@@ -16,7 +16,7 @@ export function App() {
   return (
     <>
       <h1>Tic Tac Toe</h1>
-      <h2>{state.turn}</h2>
+      <h2 data-e2e={'turn-label'}>{state.turn}</h2>
       <TicTacToeBoard
         board={state.board}
         onSquareClick={(row, column) => {

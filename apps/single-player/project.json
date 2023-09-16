@@ -1,7 +1,7 @@
 {
-  "name": "tic-tac-toe-playwright",
-  "$schema": "node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "./src",
+  "name": "single-player",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/single-player/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -24,15 +24,15 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "tic-tac-toe-playwright:build"
+        "buildTarget": "single-player:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "tic-tac-toe-playwright:build:development",
+          "buildTarget": "single-player:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "tic-tac-toe-playwright:build:production",
+          "buildTarget": "single-player:build:production",
           "hmr": false
         }
       }
@@ -41,30 +41,29 @@
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "tic-tac-toe-playwright:build"
+        "buildTarget": "single-player:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "tic-tac-toe-playwright:build:development"
+          "buildTarget": "single-player:build:development"
         },
         "production": {
-          "buildTarget": "tic-tac-toe-playwright:build:production"
+          "buildTarget": "single-player:build:production"
         }
-      }
-    },
-    "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
-      "options": {
-        "passWithNoTests": true,
-        "reportsDirectory": "coverage/tic-tac-toe-playwright"
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["./src/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/single-player/src/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "e2e": {
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/dist/.playwright/apps/single-player"],
+      "options": {
+        "config": "apps/single-player/playwright.config.ts"
       }
     }
   },

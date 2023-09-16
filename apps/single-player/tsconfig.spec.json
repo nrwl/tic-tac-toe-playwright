@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "types": ["node"]
+  },
+  "include": [
+    "e2e/**/*.test.ts",
+    "e2e/**/*.spec.ts",
+    "e2e/**/*.test.tsx",
+    "e2e/**/*.spec.tsx",
+    "e2e/**/*.test.js",
+    "e2e/**/*.spec.js",
+    "e2e/**/*.test.jsx",
+    "e2e/**/*.spec.jsx",
+    "e2e/**/*.d.ts"
+  ],
+  "types": ["@nx/react/typings/cssmodule.d.ts", "@nx/react/typings/image.d.ts"]
+}
