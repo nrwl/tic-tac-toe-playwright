@@ -13,7 +13,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "tic-tac-toe-logic": ["tic-tac-toe-logic/src/index.ts"]
+    },
     "jsx": "react-jsx",
     "allowJs": false,
     "esModuleInterop": false,
