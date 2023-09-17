@@ -4,7 +4,6 @@ import {
   BoardIndex,
   SpaceContent,
   SpaceCoordinates,
-  Turn,
 } from '../../../libs/tic-tac-toe-logic/src';
 import { startServer } from '../../multi-player-server/src/start-server';
 
