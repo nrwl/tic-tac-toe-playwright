@@ -113,6 +113,12 @@ export function nextState(
           turn: 'game over - x wins',
         };
       }
+      if (isBoardFull(newBoard)) {
+        return {
+          board: newBoard,
+          turn: `game over - it's a tie`,
+        };
+      }
       return { board: newBoard, turn: `o's turn` };
     }
     case `o's turn`: {
@@ -128,6 +134,12 @@ export function nextState(
           turn: 'game over - o wins',
         };
       }
+      if (isBoardFull(newBoard)) {
+        return {
+          board: newBoard,
+          turn: `game over - it's a tie`,
+        };
+      }
       return { board: newBoard, turn: `x's turn` };
     }
     case 'game over - x wins':
@@ -136,6 +148,17 @@ export function nextState(
       return state;
     }
   }
+}
+
+function isBoardFull(board: Board): boolean {
+  for (const row of board) {
+    for (const space of row) {
+      if (space === '') {
+        return false;
+      }
+    }
+  }
+  return true;
 }
 
 function validateMove(

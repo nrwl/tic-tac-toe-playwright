@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "tic-tac-toe-logic": ["libs/tic-tac-toe-logic/src/index.ts"]
+      "tic-tac-toe-logic": ["libs/tic-tac-toe-logic/src/index.ts"],
+      "tic-tac-toe-view": ["libs/tic-tac-toe-view/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,7 +1,7 @@
 {
-  "name": "single-player",
+  "name": "multi-player",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/single-player/src",
+  "sourceRoot": "apps/multi-player/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/tic-tac-toe-playwright"
+        "outputPath": "dist/apps/multi-player"
       },
       "configurations": {
         "development": {
@@ -24,15 +24,15 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "single-player:build"
+        "buildTarget": "multi-player:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "single-player:build:development",
+          "buildTarget": "multi-player:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "single-player:build:production",
+          "buildTarget": "multi-player:build:production",
           "hmr": false
         }
       }
@@ -41,29 +41,30 @@
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "single-player:build"
+        "buildTarget": "multi-player:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "single-player:build:development"
+          "buildTarget": "multi-player:build:development"
         },
         "production": {
-          "buildTarget": "single-player:build:production"
+          "buildTarget": "multi-player:build:production"
         }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/multi-player"
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/single-player/src/**/*.{ts,tsx,js,jsx}"]
-      }
-    },
-    "e2e": {
-      "executor": "@nx/playwright:playwright",
-      "outputs": ["{workspaceRoot}/dist/.playwright/apps/single-player"],
-      "options": {
-        "config": "apps/single-player/playwright.config.ts"
+        "lintFilePatterns": ["apps/multi-player/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },

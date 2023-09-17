@@ -1,0 +1,63 @@
+{
+  "name": "multi-player-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/multi-player-server/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/multi-player-server",
+        "format": ["cjs"],
+        "bundle": true,
+        "main": "apps/multi-player-server/src/main.ts",
+        "tsConfig": "apps/multi-player-server/tsconfig.app.json",
+        "assets": ["apps/multi-player-server/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "multi-player-server:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "multi-player-server:build:development"
+        },
+        "production": {
+          "buildTarget": "multi-player-server:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/multi-player-server/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
