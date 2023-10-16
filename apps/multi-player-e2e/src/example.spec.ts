@@ -117,7 +117,10 @@ test('cats game', async ({ page: xPlayer, browser }) => {
 
 const EXAMPLE_TEST_COUNT = 1000;
 for (let i = 0; i < EXAMPLE_TEST_COUNT; i++) {
-  test(`cats game number ${i}`, async ({ page: xPlayer, browser }) => {
+  test(`cats game number ${i} of ${EXAMPLE_TEST_COUNT}`, async ({
+    page: xPlayer,
+    browser,
+  }) => {
     const oPlayer = await browser.newPage();
     await xPlayer.goto('/');
     await oPlayer.goto('/');
