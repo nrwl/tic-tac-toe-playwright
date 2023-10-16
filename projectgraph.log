@@ -1,0 +1,86 @@
+[ 'build', 'lint', 'test', 'e2e' ]
+{
+  'multi-player-server': {
+    name: 'multi-player-server',
+    type: 'app',
+    data: {
+      name: 'multi-player-server',
+      root: 'apps/multi-player-server',
+      '$schema': '../../node_modules/nx/schemas/project-schema.json',
+      sourceRoot: 'apps/multi-player-server/src',
+      projectType: 'application',
+      targets: [Object],
+      tags: [],
+      implicitDependencies: []
+    }
+  },
+  'tic-tac-toe-logic': {
+    name: 'tic-tac-toe-logic',
+    type: 'lib',
+    data: {
+      name: 'tic-tac-toe-logic',
+      root: 'libs/tic-tac-toe-logic',
+      '$schema': '../../node_modules/nx/schemas/project-schema.json',
+      sourceRoot: 'libs/tic-tac-toe-logic/src',
+      projectType: 'library',
+      targets: [Object],
+      tags: [],
+      implicitDependencies: []
+    }
+  },
+  'multi-player-e2e': {
+    name: 'multi-player-e2e',
+    type: 'lib',
+    data: {
+      targets: [Object],
+      root: 'apps/multi-player-e2e',
+      name: 'multi-player-e2e',
+      '$schema': '../../node_modules/nx/schemas/project-schema.json',
+      sourceRoot: 'apps/multi-player-e2e/src',
+      implicitDependencies: [Array],
+      tags: []
+    }
+  },
+  'tic-tac-toe-view': {
+    name: 'tic-tac-toe-view',
+    type: 'lib',
+    data: {
+      name: 'tic-tac-toe-view',
+      root: 'libs/tic-tac-toe-view',
+      '$schema': '../../node_modules/nx/schemas/project-schema.json',
+      sourceRoot: 'libs/tic-tac-toe-view/src',
+      projectType: 'library',
+      tags: [],
+      targets: [Object],
+      implicitDependencies: []
+    }
+  },
+  'single-player': {
+    name: 'single-player',
+    type: 'app',
+    data: {
+      targets: [Object],
+      root: 'apps/single-player',
+      name: 'single-player',
+      '$schema': '../../node_modules/nx/schemas/project-schema.json',
+      sourceRoot: 'apps/single-player/src',
+      projectType: 'application',
+      tags: [],
+      implicitDependencies: []
+    }
+  },
+  'multi-player': {
+    name: 'multi-player',
+    type: 'app',
+    data: {
+      name: 'multi-player',
+      root: 'apps/multi-player',
+      '$schema': '../../node_modules/nx/schemas/project-schema.json',
+      sourceRoot: 'apps/multi-player/src',
+      projectType: 'application',
+      targets: [Object],
+      tags: [],
+      implicitDependencies: []
+    }
+  }
+}

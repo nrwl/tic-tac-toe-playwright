@@ -17,6 +17,6 @@
   "extends": [
     "plugin:playwright/recommended",
     "plugin:@nx/react",
-    "./.eslintrc.base.json"
+    "../../.eslintrc.base.json"
   ]
 }
