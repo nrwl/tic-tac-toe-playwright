@@ -15,6 +15,7 @@ jobs:
       main-branch-name: main
       number-of-agents: 5
       install-commands: |
+        pnpm install
         node add-cacheable-operations.js
       init-commands: |
         npx nx-cloud start-ci-run --stop-agents-after="build" --agent-count=5
@@ -32,5 +33,6 @@ jobs:
     with:
       number-of-agents: 5
       install-commands: |
+        pnpm install
         node add-cacheable-operations.js
         npx playwright install --with-deps
