@@ -14,6 +14,8 @@ jobs:
     with:
       main-branch-name: main
       number-of-agents: 5
+      install-commands: |
+        node add-cacheable-operations.js
       init-commands: |
         npx nx-cloud start-ci-run --stop-agents-after="build" --agent-count=5
       parallel-commands: |
@@ -29,3 +31,6 @@ jobs:
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.0
     with:
       number-of-agents: 5
+      install-commands: |
+        node add-cacheable-operations.js
+        npx playwright install --with-deps
