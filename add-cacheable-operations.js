@@ -14,8 +14,10 @@ async function getAllTargetNames() {
   //   }
   const targetsToMakeCacheable = new Set();
   for (const project of Object.values(foo.nodes)) {
-    for (const targetName of project.data.targets) {
-      targetsToMakeCacheable.add(targetName);
+    for (const targetName of Object.keys(project.data.targets)) {
+      if (targetName.startsWith('e2e-')) {
+        targetsToMakeCacheable.add(targetName);
+      }
     }
   }
   return targetsToMakeCacheable;
