@@ -1,5 +1,5 @@
 const { readNxJson, createProjectGraphAsync } = require('@nx/devkit');
-const { writeSync } = require('fs');
+const { writeFileSync } = require('fs');
 
 const nxJson = readNxJson();
 console.log(nxJson.tasksRunnerOptions.default.options.cacheableOperations);
@@ -35,5 +35,5 @@ getAllTargetNames().then((targets) => {
   nxJson.tasksRunnerOptions.default.options.cacheableOperations = Array.from(
     newCacheableOperations
   );
-  writeSync('./nx.json', JSON.stringify(nxJson, null, 2));
+  writeFileSync('./nx.json', JSON.stringify(nxJson, null, 2));
 });
