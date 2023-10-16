@@ -61,5 +61,6 @@
       }
     }
   },
-  "defaultProject": "single-player"
+  "defaultProject": "single-player",
+  "plugins": ["./tools/plugins/playwright-sharding.ts"]
 }
