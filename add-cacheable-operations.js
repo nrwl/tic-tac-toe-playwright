@@ -36,4 +36,5 @@ getAllTargetNames().then((targets) => {
     newCacheableOperations
   );
   writeFileSync('./nx.json', JSON.stringify(nxJson, null, 2));
+  process.exit(0);
 });
