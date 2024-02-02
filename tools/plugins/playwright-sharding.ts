@@ -26,6 +26,7 @@ export const createNodes: CreateNodes = [
         [`e2e-sharded`]: {
           command: `echo \"Running tests using sharding...\"`,
           dependsOn: tests.map(testNameToTargetName),
+          cache: true,
         },
       };
       for (const test of tests) {
