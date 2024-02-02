@@ -22,7 +22,8 @@ export const createNodes: CreateNodes = [
         .split(`\n`)
         .filter((_, i) => i > 0 && i < testList.split(`\n`).length - 2)
         .map((line) => line.split(` › `)[2]);
-      const targets = {
+
+      const targets: ProjectConfiguration['targets'] = {
         [`e2e-sharded`]: {
           command: `echo \"Running tests using sharding...\"`,
           dependsOn: tests.map(testNameToTargetName),
