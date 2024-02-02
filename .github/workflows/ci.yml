@@ -13,11 +13,11 @@ jobs:
     uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.0
     with:
       main-branch-name: main
-      number-of-agents: 1
+      number-of-agents: 20
       install-commands: |
         pnpm install
       init-commands: |
-        npx nx-cloud start-ci-run --agent-count=1
+        npx nx-cloud start-ci-run --agent-count=20
       parallel-commands-on-agents: |
         npx nx affected --target=lint --parallel=3
         npx nx affected --target=test --parallel=3 --ci --code-coverage
@@ -28,7 +28,7 @@ jobs:
     name: Nx Cloud - Agents
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.0
     with:
-      number-of-agents: 1
+      number-of-agents: 20
       install-commands: |
         pnpm install
         npx playwright install --with-deps

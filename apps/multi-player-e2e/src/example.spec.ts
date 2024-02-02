@@ -201,3 +201,5 @@ async function getSpace(
     .innerText();
   return content.toLowerCase() as SpaceContent;
 }
+
+console.log('foo');
