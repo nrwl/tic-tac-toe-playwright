@@ -4,6 +4,14 @@ import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
+  root: __dirname,
+  build: {
+    outDir: '../../dist/tic-tac-toe-playwright',
+    reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
   cacheDir: '../../node_modules/.vite/tic-tac-toe-playwright',
 
   server: {
@@ -24,6 +32,11 @@ export default defineConfig({
   // },
 
   test: {
+    reporters: ['default'],
+    coverage: {
+      reportsDirectory: '../../coverage/apps/single-player',
+      provider: 'v8',
+    },
     globals: true,
     cache: {
       dir: '../../node_modules/.vitest',

@@ -13,19 +13,22 @@ jobs:
     uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.0
     with:
       main-branch-name: main
-      number-of-agents: 5
+      number-of-agents: 20
+      install-commands: |
+        pnpm install
       init-commands: |
-        npx nx-cloud start-ci-run --stop-agents-after="build" --agent-count=5
-      parallel-commands: |
-        npx nx-cloud record -- npx nx format:check
+        npx nx-cloud start-ci-run --agent-count=20
       parallel-commands-on-agents: |
         npx nx affected --target=lint --parallel=3
         npx nx affected --target=test --parallel=3 --ci --code-coverage
         npx nx affected --target=build --parallel=3
-        npx nx affected --target=e2e --parallel=1
+        npx nx affected --target=e2e-sharded --parallel=1
 
   agents:
     name: Nx Cloud - Agents
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.0
     with:
-      number-of-agents: 5
+      number-of-agents: 20
+      install-commands: |
+        pnpm install
+        npx playwright install --with-deps

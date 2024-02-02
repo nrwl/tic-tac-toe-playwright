@@ -88,32 +88,65 @@ test('x wins', async ({ page: xPlayer, browser }) => {
   await assertTurn(oPlayer, `You lose!`);
 });
 
-test('cats game', async ({ page: xPlayer, browser }) => {
-  const oPlayer = await browser.newPage();
-  await xPlayer.goto('/');
-  await oPlayer.goto('/');
-  await clickSpace(xPlayer, { row: 0, column: 0 });
-  await clickSpace(oPlayer, { row: 0, column: 1 });
-  await clickSpace(xPlayer, { row: 0, column: 2 });
-  await clickSpace(oPlayer, { row: 1, column: 0 });
-  await clickSpace(xPlayer, { row: 1, column: 2 });
-  await clickSpace(oPlayer, { row: 1, column: 1 });
-  await clickSpace(xPlayer, { row: 2, column: 0 });
-  await clickSpace(oPlayer, { row: 2, column: 2 });
-  await clickSpace(xPlayer, { row: 2, column: 1 });
-  await assertBoardMatches(xPlayer, [
-    ['x', 'o', 'x'],
-    ['o', 'o', 'x'],
-    ['x', 'x', 'o'],
-  ]);
-  await assertBoardMatches(oPlayer, [
-    ['x', 'o', 'x'],
-    ['o', 'o', 'x'],
-    ['x', 'x', 'o'],
-  ]);
-  await assertTurn(xPlayer, `Tie game`);
-  await assertTurn(oPlayer, `Tie game`);
-});
+// test('cats game', async ({ page: xPlayer, browser }) => {
+//   const oPlayer = await browser.newPage();
+//   await xPlayer.goto('/');
+//   await oPlayer.goto('/');
+//   await clickSpace(xPlayer, { row: 0, column: 0 });
+//   await clickSpace(oPlayer, { row: 0, column: 1 });
+//   await clickSpace(xPlayer, { row: 0, column: 2 });
+//   await clickSpace(oPlayer, { row: 1, column: 0 });
+//   await clickSpace(xPlayer, { row: 1, column: 2 });
+//   await clickSpace(oPlayer, { row: 1, column: 1 });
+//   await clickSpace(xPlayer, { row: 2, column: 0 });
+//   await clickSpace(oPlayer, { row: 2, column: 2 });
+//   await clickSpace(xPlayer, { row: 2, column: 1 });
+//   await assertBoardMatches(xPlayer, [
+//     ['x', 'o', 'x'],
+//     ['o', 'o', 'x'],
+//     ['x', 'x', 'o'],
+//   ]);
+//   await assertBoardMatches(oPlayer, [
+//     ['x', 'o', 'x'],
+//     ['o', 'o', 'x'],
+//     ['x', 'x', 'o'],
+//   ]);
+//   await assertTurn(xPlayer, `Tie game`);
+//   await assertTurn(oPlayer, `Tie game`);
+// });
+
+const EXAMPLE_TEST_COUNT = 101;
+for (let i = 0; i < EXAMPLE_TEST_COUNT; i++) {
+  test(`cats game number ${i} of ${EXAMPLE_TEST_COUNT}`, async ({
+    page: xPlayer,
+    browser,
+  }) => {
+    const oPlayer = await browser.newPage();
+    await xPlayer.goto('/');
+    await oPlayer.goto('/');
+    await clickSpace(xPlayer, { row: 0, column: 0 });
+    await clickSpace(oPlayer, { row: 0, column: 1 });
+    await clickSpace(xPlayer, { row: 0, column: 2 });
+    await clickSpace(oPlayer, { row: 1, column: 0 });
+    await clickSpace(xPlayer, { row: 1, column: 2 });
+    await clickSpace(oPlayer, { row: 1, column: 1 });
+    await clickSpace(xPlayer, { row: 2, column: 0 });
+    await clickSpace(oPlayer, { row: 2, column: 2 });
+    await clickSpace(xPlayer, { row: 2, column: 1 });
+    await assertBoardMatches(xPlayer, [
+      ['x', 'o', 'x'],
+      ['o', 'o', 'x'],
+      ['x', 'x', 'o'],
+    ]);
+    await assertBoardMatches(oPlayer, [
+      ['x', 'o', 'x'],
+      ['o', 'o', 'x'],
+      ['x', 'x', 'o'],
+    ]);
+    await assertTurn(xPlayer, `Tie game`);
+    await assertTurn(oPlayer, `Tie game`);
+  });
+}
 
 async function clickSpace(
   page: Page,

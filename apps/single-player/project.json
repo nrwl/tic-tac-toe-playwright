@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/tic-tac-toe-playwright"
+        "outputPath": "dist/apps/single-player"
       },
       "configurations": {
         "development": {
@@ -53,11 +53,8 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/single-player/src/**/*.{ts,tsx,js,jsx}"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "e2e": {
       "executor": "@nx/playwright:playwright",
