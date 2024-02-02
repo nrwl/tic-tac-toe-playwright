@@ -115,7 +115,7 @@ test('x wins', async ({ page: xPlayer, browser }) => {
 //   await assertTurn(oPlayer, `Tie game`);
 // });
 
-const EXAMPLE_TEST_COUNT = 50;
+const EXAMPLE_TEST_COUNT = 100;
 for (let i = 0; i < EXAMPLE_TEST_COUNT; i++) {
   test(`cats game number ${i} of ${EXAMPLE_TEST_COUNT}`, async ({
     page: xPlayer,

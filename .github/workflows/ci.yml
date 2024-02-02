@@ -13,12 +13,12 @@ jobs:
     uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.0
     with:
       main-branch-name: main
-      number-of-agents: 10
+      number-of-agents: 1
       install-commands: |
         pnpm install
         node add-cacheable-operations.js
       init-commands: |
-        npx nx-cloud start-ci-run --agent-count=10
+        npx nx-cloud start-ci-run --agent-count=1
       parallel-commands-on-agents: |
         npx nx affected --target=lint --parallel=3
         npx nx affected --target=test --parallel=3 --ci --code-coverage
@@ -29,7 +29,7 @@ jobs:
     name: Nx Cloud - Agents
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.0
     with:
-      number-of-agents: 10
+      number-of-agents: 1
       install-commands: |
         pnpm install
         node add-cacheable-operations.js
