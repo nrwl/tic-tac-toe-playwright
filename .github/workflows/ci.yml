@@ -16,7 +16,6 @@ jobs:
       number-of-agents: 1
       install-commands: |
         pnpm install
-        node add-cacheable-operations.js
       init-commands: |
         npx nx-cloud start-ci-run --agent-count=1
       parallel-commands-on-agents: |

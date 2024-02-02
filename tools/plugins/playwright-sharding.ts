@@ -33,6 +33,7 @@ export const createNodes: CreateNodes = [
         targets[targetName] = {
           command: `CI=true npx playwright test -g "${test}"`,
           options: { cwd },
+          cache: true,
         };
       }
       return { projects: { [name]: { targets, root: dirname(filePath) } } };
