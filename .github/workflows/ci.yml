@@ -31,5 +31,4 @@ jobs:
       number-of-agents: 1
       install-commands: |
         pnpm install
-        node add-cacheable-operations.js
         npx playwright install --with-deps
