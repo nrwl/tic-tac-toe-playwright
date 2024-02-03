@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useState } from 'react';
 import { TicTacToeState, createEmptyBoard, nextState } from 'tic-tac-toe-logic';
 import { TicTacToeBoard } from 'tic-tac-toe-view';
