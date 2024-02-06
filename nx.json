@@ -81,6 +81,12 @@
       "options": {
         "targetName": "lint"
       }
+    },
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
     }
   ],
   "nxCloudAccessToken": "ZDc2NmEzOGEtZDgxMi00NTUwLWFhOTctZTcyZDM3YTcwNTgzfHJlYWQtd3JpdGU="
