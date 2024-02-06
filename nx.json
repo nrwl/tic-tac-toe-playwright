@@ -57,6 +57,31 @@
     }
   },
   "defaultProject": "single-player",
-  "plugins": ["./tools/plugins/playwright-sharding.ts"],
+  "plugins": [
+    "./tools/plugins/playwright-sharding.ts",
+    {
+      "plugin": "@nx/nuxt/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve"
+      }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "previewTargetName": "preview",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "serveStaticTargetName": "serve-static"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    }
+  ],
   "nxCloudAccessToken": "ZDc2NmEzOGEtZDgxMi00NTUwLWFhOTctZTcyZDM3YTcwNTgzfHJlYWQtd3JpdGU="
 }

@@ -39,3 +39,9 @@ testem.log
 Thumbs.db
 
 .nx/cache
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
