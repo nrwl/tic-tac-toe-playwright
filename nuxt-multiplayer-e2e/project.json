@@ -1,0 +1,7 @@
+{
+  "name": "nuxt-multiplayer-e2e",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nuxt-multiplayer-e2e/src",
+  "targets": {},
+  "implicitDependencies": ["apps-nuxt-multiplayer"]
+}

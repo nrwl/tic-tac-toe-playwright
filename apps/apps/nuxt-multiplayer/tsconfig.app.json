@@ -1,0 +1,7 @@
+{
+  "extends": "../../../dist/nuxt-multiplayer/.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "exclude": []
+}
